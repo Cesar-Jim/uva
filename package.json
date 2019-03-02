@@ -14,7 +14,7 @@
   "author": "Cesar Jimenez",
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^3.0.0",
+    "jasmine": "^3.3.1",
     "request": "^2.83.0"
   },
   "dependencies": {
