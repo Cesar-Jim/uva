@@ -3,6 +3,12 @@ body {
 }
 
 .navbar {
+  display: flex;
   background-color: #212426 !important;
-  height: 175px !important;
+  height: 155px !important;
+  width: 100%;
+}
+
+.logo {
+  margin-top: 80px;
 }

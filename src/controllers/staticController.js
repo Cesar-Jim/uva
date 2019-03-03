@@ -1,11 +1,11 @@
 // Each function contains a handler for a particular route.
 
 module.exports = {
-  index(req, res, next) {
+  index: function(req, res, next) {
     res.render("static/index", { title: "Welcome to uva" });
     // render() takes the location of the template and the object containing the data passed in the template
   },
-  about(req, res, next) {
+  about: function(req, res, next) {
     res.render("static/about-us", { title: "About Us" });
   }
 };
