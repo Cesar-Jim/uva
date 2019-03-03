@@ -6,10 +6,11 @@ describe("routes : static", () => {
   describe("GET /", () => {
     // Test scope: Landing page (root of the application)
 
-    it("should return OK status code 200", done => {
+    it("should return status code 200 and have 'Welcome to UVA' in the body of the response", done => {
       // Passing done as a parameter to the function tells jasmine to wait until it is called
       request.get(base, (err, res, body) => {
         expect(res.statusCode).toBe(200);
+        expect(body).toContain("Welcome to UVA");
         done();
       });
     });

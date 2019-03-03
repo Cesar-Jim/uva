@@ -1,10 +1,9 @@
 const express = require("express");
 const router = express.Router();
 
+const staticController = require("../controllers/staticController");
+
 // Defining the route "/". Set the root path to accept a GET request.
-router.get("/", (req, res, next) => {
-  // next passes control to the next matching route
-  res.send("Welcome to uva");
-});
+router.get("/", staticController.index);
 
 module.exports = router;
