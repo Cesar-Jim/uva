@@ -7,40 +7,67 @@
     <% include ./partials/navbar.ejs %>
 
     <!-- Page Content -->
-    <main class="container">
+    <main class="header-container">
       <!-- Jumbotron Header -->
-      <header class="jumbotron my-4">
-        <h1 class="display-3">Welcome to UVA</h1>
-        <p class="lead">
-          "Home is where the wine is", let's discuss about wine...
+      <header class="jumbotron my-1" id="header-jumbo">
+        <h1 class="animated fadeIn delay-1s display-3">
+          <span class="uva-text"> UVA</span>
+        </h1>
+        <p class="animated fadeIn delay-1s lead">
+          <span class="lead-text"
+            >"Home is where the wine is"
         </p>
-        <a href="#" class="btn btn-primary btn-lg">Sign up</a>
+        <a href="#" class="btn btn-outline-dark btn-lg" id="signUp-btn"
+          >Sign up</a
+        >
       </header>
 
-      <!-- Page Features -->
-      <section class="row text-center">
-        <section class="col-lg-4">
-          <h4 class="card-title">Rate</h4>
-          <p class="card-text">
-            Share your ratings about the wine products that you love.
-          </p>
-        </section>
-
-        <section class="col-lg-4">
-          <h4 class="card-title">Comment</h4>
-          <p class="card-text">
-            Your opinion counts! But you have to make yourself heard first!
-          </p>
-        </section>
-
-        <section class="col-lg-4">
-          <h4 class="card-title">Stay Informed</h4>
-          <p class="card-text">
-            See the most active topics as well as trending subjects every day!
-          </p>
-        </section>
-      </section>
-      <!-- /.row -->
+      <!-- Page Features (cards)-->
+      <div class="card-deck">
+        <div class="card">
+          <img
+            src=""
+            class="card-img-top"
+            alt="uva-comment"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><strong>COMMENT</strong></h5>
+            <p class="card-text">
+              Your opinion counts. Interact with other ratings and provide
+              feedback!
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src=""
+            class="card-img-top"
+            alt="uva-rate"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><strong>RATE</strong></h5>
+            <p class="card-text">
+              Share your ratings and critique about the wine you have just
+              tasted!
+            </p>
+          </div>
+        </div>
+        <div class="card">
+          <img
+            src=""
+            class="card-img-top"
+            alt="uva-stay-informed"
+          />
+          <div class="card-body">
+            <h5 class="card-title"><strong>LEARN</strong></h5>
+            <p class="card-text">
+              See the most active critiques as well as trending subjects every
+              day!
+            </p>
+          </div>
+        </div>
+      </div>
+      <% include ./partials/footer.ejs %>
     </main>
     <!-- /.container -->
     <% include ./partials/baseScripts.ejs %>

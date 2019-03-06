@@ -1,35 +1,36 @@
 <!-- Navigation -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="container">
-    <a href="#" class="navbar-left"
-      ><img
-        class="logo"
-        src="../../images/uva-logo.png"
-        width="200"
-        height="200"
-        alt="UVA"
-    /></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-toggle="collapse"
-      data-target="#navbarResponsive"
-      aria-controls="navbarResponsive"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
+<nav class="animated slideInDown navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarResponsive"
+    aria-controls="navbarResponsive"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a href="#" class="navbar-right"
+    ><img
+      class="animated fadeIn delay-1s logo"
+      src="../../images/uva-dark.png"
+      width="130"
+      height="150"
+      alt="UVA"
+  /></a>
+  <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ml-auto" id="navbar-links">
         <li class="nav-item">
-          <a class="nav-link" href="#"
+          <a class="nav-link" id="home-active" href="#"
             >Home
-            <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">About </a>
+            <a class="nav-link" href="#">Wines</a>
+          </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
         </li>
       </ul>
     </div>

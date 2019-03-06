@@ -1,14 +1,148 @@
+@import url("https://fonts.googleapis.com/css?family=Cinzel|Parisienne|Roboto:300");
+
+/***********************/
+/* BODY: IDs & CLASSES */
+/***********************/
 body {
   padding-top: 150px;
+  display: flex;
 }
 
+/************************/
+/* NAVBAR IDs & CLASSES */
+/************************/
 .navbar {
   display: flex;
   background-color: #212426 !important;
-  height: 155px !important;
-  width: 100%;
+  justify-content: center;
+  height: 110px;
 }
 
 .logo {
-  margin-top: 80px;
+  margin: 60px 0px 0px 0px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(3px 3px 3px #222);
+}
+
+.navbar-toggler {
+  position: absolute;
+  justify-items: left;
+  margin: -20px 0px 0px 0px;
+}
+
+/***************************/
+/* JUMBOTRON IDs & CLASSES */
+/***************************/
+
+.jumbotron {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1),
+    rgba(86, 49, 76, 0.85)
+  );
+  color: #212426 !important;
+  border-radius: 0px;
+}
+
+main.header-container {
+  margin-top: 75px;
+}
+
+.lead {
+  margin: -30px 0px 40px 0px;
+}
+
+#signUp-btn {
+  display: block;
+  max-width: 140px;
+  margin: 0px auto 75px auto;
+  background-color: #21242600;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+}
+
+#signUp-btn:hover {
+  border-color: #ffffff;
+  background-color: rgb(255, 255, 255, 0.4);
+  color: rgb(255, 255, 255, 1);
+  border-width: 1px;
+}
+
+.display-3,
+.lead {
+  text-align: center;
+}
+
+/***************************/
+/* CARDS IDs & CLASSES */
+/***************************/
+
+.card-deck {
+  display: flex;
+  margin: 25px 25px 125px 25px;
+}
+
+img.card-img-top {
+  margin: 0px;
+  padding: 0px;
+}
+
+.card {
+  margin: 50px 25px 50px 25px;
+  border-radius: 5px 5px 25px 25px;
+  text-align: center;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 0.7);
+}
+
+/************************/
+/* FOOTER IDs & CLASSES */
+/************************/
+
+.footer {
+  text-align: center;
+  color: #212426;
+  font-family: "Cinzel", serif;
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+/***********************/
+/* FONTS IDs & CLASSES */
+/***********************/
+
+.uva-text {
+  font-family: "Cinzel", serif;
+  font-size: 110px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(2px 2px 2px #222);
+}
+
+.lead-text {
+  text-align: center;
+  font-family: "Parisienne", cursive;
+  font-size: 36px;
+  color: #212426;
+}
+
+.card-title {
+  font-family: "Cinzel", serif;
+  font-size: 32px;
+}
+
+.card-text {
+  font-family: "Parisienne", cursive;
+  font-size: 26px;
+  color: #212426;
+}
+
+#navbar-links {
+  font-family: "Cinzel", serif;
+  font-size: 17px;
+  color: #ffffff;
+}
+
+#home-active {
+  color: #ffffff;
 }
