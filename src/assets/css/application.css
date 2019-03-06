@@ -1,4 +1,30 @@
-@import url("https://fonts.googleapis.com/css?family=Cinzel|Parisienne|Roboto:300");
+@import url("https://fonts.googleapis.com/css?family=Cinzel|Parisienne|Open+Sans");
+
+.animated.hinge {
+  -webkit-animation: hinge 3s; /* Safari 4+ */
+  -moz-animation: hinge 3s; /* Fx 5+ */
+  -o-animation: hinge 3s; /* Opera 12+ */
+  animation: hinge 3s; /* IE 10+, Fx 29+ */
+  opacity: 0;
+  margin-top: -78px;
+  margin-right: -60px;
+}
+
+.animated.slideInDown {
+  opacity: 0;
+  -webkit-animation: slideInDown 2s; /* Safari 4+ */
+  -moz-animation: slideInDown 2s; /* Fx 5+ */
+  -o-animation: slideInDown 2s; /* Opera 12+ */
+  animation: slideInDown 2s; /* IE 10+, Fx 29+ */
+  opacity: 1;
+}
+
+.animated.fadeIn {
+  -webkit-animation: fadeIn 5s; /* Safari 4+ */
+  -moz-animation: fadeIn 5s; /* Fx 5+ */
+  -o-animation: fadeIn 5s; /* Opera 12+ */
+  animation: fadeIn 5s; /* IE 10+, Fx 29+ */
+}
 
 /***********************/
 /* BODY: IDs & CLASSES */
@@ -6,6 +32,23 @@
 body {
   padding-top: 150px;
   display: flex;
+}
+
+.display-3 {
+  text-align: center;
+  font-family: "Parisienne", cursive;
+  font-size: 60px;
+  color: #212426;
+  padding-top: 150px;
+  padding-bottom: 25px;
+}
+
+h3 {
+  margin-top: 0px;
+}
+
+.latest-ratings {
+  color: #212426;
 }
 
 /************************/
@@ -34,7 +77,7 @@ body {
 /* JUMBOTRON IDs & CLASSES */
 /***************************/
 
-.jumbotron {
+.jumbotron.my-1 {
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 1),
@@ -69,9 +112,26 @@ main.header-container {
   border-width: 1px;
 }
 
+.display-1,
 .display-3,
 .lead {
   text-align: center;
+}
+
+.hero-image {
+  position: sticky;
+  top: 50%;
+  left: 50%;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -250px; /* Negative half of width. */
+}
+
+.jumbotron-fluid {
+  background-image: url("../../images/green-grapes.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.9;
+  padding: 125px 0px 125px 0px;
 }
 
 /***************************/
@@ -86,14 +146,43 @@ main.header-container {
 img.card-img-top {
   margin: 0px;
   padding: 0px;
+  border-radius: 25px;
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(3px 3px 3px #222);
 }
 
 .card {
   margin: 50px 25px 50px 25px;
   border-radius: 5px 5px 25px 25px;
   text-align: center;
+  border: none;
+}
+
+#wine-card {
+  margin: 50px 25px 50px 25px;
+
   border-width: 1px;
-  border-color: rgb(33, 36, 38, 0.7);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.wine-body {
+  background-color: rgb(33, 36, 38, 0.05);
+  border-radius: 5px;
+}
+
+.wine-image {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(5px 5px 5px #222);
+  max-width: 200px;
+  max-height: 280px;
+}
+
+.last-5-rated {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgb(207, 176, 125);
+  border-bottom: 1px solid rgb(207, 176, 125);
+  margin: 0px 0px 0px 0px;
 }
 
 /************************/
@@ -122,18 +211,36 @@ img.card-img-top {
 .lead-text {
   text-align: center;
   font-family: "Parisienne", cursive;
-  font-size: 36px;
+  font-size: 32px;
   color: #212426;
 }
 
 .card-title {
-  font-family: "Cinzel", serif;
-  font-size: 32px;
+  font-family: "Parisienne", cursive;
+  font-size: 60px;
+  font-weight: 100;
+  color: #212426;
 }
 
 .card-text {
-  font-family: "Parisienne", cursive;
-  font-size: 26px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  font-weight: 100;
+  color: #212426;
+}
+
+.wine-name {
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-size: 20px !important;
+  color: #212426;
+}
+
+.wine-rating {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px !important;
+  font-weight: 300;
   color: #212426;
 }
 
@@ -145,4 +252,9 @@ img.card-img-top {
 
 #home-active {
   color: #ffffff;
+}
+
+#comment-title,
+#rate-title {
+  margin-top: 20px;
 }

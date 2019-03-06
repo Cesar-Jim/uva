@@ -9,64 +9,103 @@
     <!-- Page Content -->
     <main class="header-container">
       <!-- Jumbotron Header -->
+      
       <header class="jumbotron my-1" id="header-jumbo">
-        <h1 class="animated fadeIn delay-1s display-3">
-          <span class="uva-text"> UVA</span>
+          
+        <h1 class="animated fadeIn display-1">
+            
+          <span class="uva-text">UVA</span>
         </h1>
-        <p class="animated fadeIn delay-1s lead">
+        <p class="animated fadeIn lead">
           <span class="lead-text"
             >"Home is where the wine is"
         </p>
         <a href="#" class="btn btn-outline-dark btn-lg" id="signUp-btn"
           >Sign up</a
         >
+        <img class="animated hinge delay-3s hero-image" src="../../images/accent-leaf.png"/>
       </header>
 
-      <!-- Page Features (cards)-->
+      <!-- List latest 5 rated wines (cards)-->
+      <!-- Use forEach to list all 3 -->
+      <h3 class="display-3 latest-ratings">
+          <span class="latest-rated">Most Recent <br /> Wine Ratings:</span>
+        </h3>
+      <section class="last-5-rated">
+          <div class="card mb-5" id="wine-card" style="max-width: 340px;">
+              <a href="#"><div class="row no-gutters">
+                <div class="col-md-4">
+                  <img src="../../images/podere.png" class="card-img wine-image" alt="podere-italy">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body wine-body">
+                    <h5 class="card-title wine-name"><strong>Podere</strong><br />(Italy)</h5>
+                    <p class="card-text wine-rating">Rating: 8.9</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+      </section>
+
+      <!-- Vineyard separator image -->
+      <section class="page-features">
+          <div class="jumbotron jumbotron-fluid">
+              <div class="container">
+              </div>
+            </div>
+      </section>
+
+      <!-- Page Features (cards) -->
+      <h3 class="display-3 join-us">
+          <span class="why-join-us">Why Join <br />Us?</span>
+        </h3>
+        <section class="join">
       <div class="card-deck">
         <div class="card">
           <img
-            src=""
+            src="../../images/comment.jpg"
             class="card-img-top"
             alt="uva-comment"
           />
           <div class="card-body">
-            <h5 class="card-title"><strong>COMMENT</strong></h5>
+            <h5 class="card-title" id="comment-title"><strong>-Comment-</strong></h5>
             <p class="card-text">
-              Your opinion counts. Interact with other ratings and provide
-              feedback!
-            </p>
+                Your opinion counts. Interact with other ratings and provide
+                feedback!
+              </p>
           </div>
         </div>
         <div class="card">
+            <img
+              src="../../images/informed.jpg"
+              class="card-img-top"
+              alt="uva-stay-informed"
+            />
+            <div class="card-body">
+              <h5 class="card-title" id="learn-title"><strong>-Learn-</strong></h5>
+              <p class="card-text">
+                  See the most active critiques as well as trending subjects every
+                  day!
+                </p>
+            </div>
+          </div>
+        <div class="card">
           <img
-            src=""
+            src="../../images/rate.jpg"
             class="card-img-top"
             alt="uva-rate"
           />
           <div class="card-body">
-            <h5 class="card-title"><strong>RATE</strong></h5>
+            <h5 class="card-title" id="rate-title"><strong>-Rate-</strong></h5>
             <p class="card-text">
-              Share your ratings and critique about the wine you have just
-              tasted!
-            </p>
-          </div>
-        </div>
-        <div class="card">
-          <img
-            src=""
-            class="card-img-top"
-            alt="uva-stay-informed"
-          />
-          <div class="card-body">
-            <h5 class="card-title"><strong>LEARN</strong></h5>
-            <p class="card-text">
-              See the most active critiques as well as trending subjects every
-              day!
-            </p>
+                Share your ratings and critique about the wine you have just
+                tasted!
+              </p>
           </div>
         </div>
       </div>
+    </section>
       <% include ./partials/footer.ejs %>
     </main>
     <!-- /.container -->
