@@ -37,7 +37,7 @@ body {
 .display-3 {
   text-align: center;
   font-family: "Parisienne", cursive;
-  font-size: 60px;
+  font-size: 58px;
   color: #212426;
   padding-top: 150px;
   padding-bottom: 25px;
@@ -217,14 +217,14 @@ img.card-img-top {
 
 .card-title {
   font-family: "Parisienne", cursive;
-  font-size: 60px;
+  font-size: 54px;
   font-weight: 100;
   color: #212426;
 }
 
 .card-text {
   font-family: "Open Sans", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 100;
   color: #212426;
 }
@@ -234,6 +234,10 @@ img.card-img-top {
   font-family: "Cinzel", serif;
   font-size: 20px !important;
   color: #212426;
+}
+
+.wine-bottle {
+  font-weight: 800;
 }
 
 .wine-rating {
