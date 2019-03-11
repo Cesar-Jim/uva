@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <%include ../static/partials/navbar.ejs %>
+    <main class="container">
+      <h1>Edit Wine</h1>
+
+      <form action="/wines/<%= wine.id %>/update" method="POST">
+        <form action="/wines/create" method="POST">
+          <!-- Picture upload -->
+          <div class="form-group row">
+            <div class="col-5">
+              <label for="picture">Wine picture</label>
+              <input
+                value = "<%- wine.picture %>"
+                type="file"
+                class="form-control "
+                name="picture"
+                aria-describedby="pictureHelp"
+              />
+            </div>
+          </div>
+          <!-- Ends picture upload -->
+  
+          <div class="form-group row">
+            <div class="col-5">
+              <label for="name">Wine name</label>
+              <input
+                value = "<%= wine.name %>"
+                type="text"
+                class="form-control "
+                name="name"
+                aria-describedby="nameHelp"
+                size="50"
+              />
+              <small class="text-muted" id="nameHelp">ex.: Petrus</small>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-5">
+              <label for="country">Country and region</label>
+              <input
+                value = "<%= wine.country %>"
+                type="text"
+                class="form-control"
+                name="country"
+                aria-describedby="countryHelp"
+              />
+              <small class="text-muted" id="countryHelp"
+                >ex.: France (Bordeaux)</small
+              >
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-5">
+              <label for="variety">Grape variety</label>
+              <input
+                value = "<%= wine.variety %>"
+                type="text"
+                class="form-control"
+                name="variety"
+                aria-describedby="varietyHelp"
+              />
+              <small class="text-muted" id="varietyHelp"
+                >ex.: Cabernet Sauvignon</small
+              >
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-3">
+              <label for="alcohol">Alcohol percentage</label>
+              <input
+                value = "<%= wine.alcohol %>"
+                type="number"
+                class="form-control"
+                name="alcohol"
+                aria-describedby="alcoholHelp"
+                step="0.1"
+                min="0"
+              />
+              <small class="text-muted" id="alcoholHelp">ex.: 13.0</small>
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-3">
+              <label for="price">Price</label>
+              <input
+                value = "<%= wine.price %>"
+                type="number"
+                class="form-control"
+                name="price"
+                aria-describedby="priceHelp"
+                step="0.01"
+                min="0"
+              />
+              <small class="text-muted" id="priceHelp">ex.: 24.99</small>
+            </div>
+          </div>
+  
+          <h1>UVA's Rating</h1>
+  
+          <div class="form-group row">
+            <div class="col-2">
+              <label for="poq">Price / Quality</label>
+              <input
+                value = "<%= wine.poq %>"
+                type="number"
+                class="form-control"
+                name="poq"
+                aria-describedby="poqHelp"
+                step="1"
+                min="0"
+                max="10"
+                id="poqValue"
+                value="0"
+                onchange="avgRatingUpdate()"
+              />
+              <small class="text-muted" id="poqHelp"
+                >value out of 10. Ex.: 8</small
+              >
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-2">
+              <label for="body">Wine body</label>
+              <input
+                value = "<%= wine.body %>"
+                type="number"
+                class="form-control"
+                name="body"
+                aria-describedby="bodyHelp"
+                step="1"
+                min="0"
+                max="10"
+                id="bodyValue"
+                value="0"
+                onchange="avgRatingUpdate()"
+              />
+              <small class="text-muted" id="poqHelp"
+                >value out of 10. Ex.: 8</small
+              >
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-2">
+              <label for="taste">Wine taste</label>
+              <input
+                value = "<%= wine.taste %>"
+                type="number"
+                class="form-control"
+                name="taste"
+                aria-describedby="tasteHelp"
+                step="1"
+                min="0"
+                max="10"
+                id="tasteValue"
+                value="0"
+                onchange="avgRatingUpdate()"
+              />
+              <small class="text-muted" id="poqHelp"
+                >value out of 10. Ex.: 8</small
+              >
+            </div>
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-2">
+              <label for="looks">Bottle looks</label>
+              <input
+                value = "<%= wine.looks %>"
+                type="number"
+                class="form-control"
+                name="looks"
+                aria-describedby="looksHelp"
+                step="1"
+                min="0"
+                max="10"
+                id="looksValue"
+                value="0"
+                onchange="avgRatingUpdate()"
+              />
+              <small class="text-muted" id="poqHelp"
+                >value out of 10. Ex.: 8</small
+              >
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="comments">Comments</label>
+            <textarea rows="3" class="form-control" name="comments"><%= wine.comments %></textarea>
+            <small class="text-muted" id="commentsHelp"
+              >enter an insight of the wine's main characteristics</small
+            >
+          </div>
+  
+          <div class="form-group row">
+            <div class="col-3">
+              <label for="avgRating">Rating</label>
+              <input
+                value = "<%= wine.avgRating %>"
+                type="number"
+                class="form-control"
+                name="avgRating"
+                aria-describedby="avgRatingHelp"
+                step="0.1"
+                min="0"
+                max="10"
+                value="avgRating"
+                id="avgRatingValue"
+                readonly
+              />
+              <small class="text-muted" id="avgRatingHelp"
+                >resulting rating provided by UVA.</small
+              >
+            </div>
+          </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+
+      <% include ../static/partials/footer.ejs %>
+    </main>
+    <% include ../static/partials/baseScripts.ejs %>
+  </body>
+</html>

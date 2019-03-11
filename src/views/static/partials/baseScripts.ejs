@@ -1,12 +1,41 @@
 <!-- Scripts -->
+
+<!-- jquery -->
 <script
   src="http://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"
 ></script>
+
+<!-- bootstrap -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TweenMax.min.js"></script>
+
+<!-- jasny-bootstrap -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/js/jasny-bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jasny-bootstrap/4.0.0/js/jasny-bootstrap.min.js"></script>
+
+<!-- animate.css -->
 <link
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"
 />
+
+<!-- calculation scripts -->
+<script>
+  function avgRatingUpdate() {
+    var poq = parseFloat(document.getElementById("poqValue").value);
+    var body = parseFloat(document.getElementById("bodyValue").value);
+    var taste = parseFloat(document.getElementById("tasteValue").value);
+    var looks = parseFloat(document.getElementById("looksValue").value);
+
+    // Clear avgRating input field
+    document.getElementById("avgRatingValue").value = "";
+
+    var rating = (poq + body + taste + looks) / 4;
+
+    // Re-populate avgRating input field
+    document.getElementById("avgRatingValue").value = parseFloat(
+      rating
+    ).toFixed(1);
+  }
+</script>

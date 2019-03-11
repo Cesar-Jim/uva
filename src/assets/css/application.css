@@ -85,6 +85,7 @@ h3 {
   );
   color: #212426 !important;
   border-radius: 0px;
+  padding-bottom: 150px;
 }
 
 main.header-container {
@@ -217,7 +218,7 @@ img.card-img-top {
 
 .card-title {
   font-family: "Parisienne", cursive;
-  font-size: 54px;
+  font-size: 50px;
   font-weight: 100;
   color: #212426;
 }
@@ -227,6 +228,10 @@ img.card-img-top {
   font-size: 16px;
   font-weight: 100;
   color: #212426;
+}
+
+.last-rated-link:hover {
+  text-decoration: none;
 }
 
 .wine-name {
@@ -259,6 +264,7 @@ img.card-img-top {
 }
 
 #comment-title,
-#rate-title {
+#rate-title,
+#learn-title {
   margin-top: 20px;
 }
