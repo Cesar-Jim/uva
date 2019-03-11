@@ -1,32 +1,8 @@
 "use strict";
 module.exports = (sequelize, DataTypes) => {
-  var Wine = sequelize.define(
-    "Wine",
+  var Rating = sequelize.define(
+    "Rating",
     {
-      name: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      country: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      picture: {
-        type: DataTypes.BLOB("long"),
-        allowNull: false
-      },
-      price: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-      },
-      variety: {
-        type: DataTypes.STRING,
-        allowNull: false
-      },
-      alcohol: {
-        type: DataTypes.FLOAT,
-        allowNull: false
-      },
       poq: {
         type: DataTypes.INTEGER,
         allowNull: false
@@ -50,17 +26,21 @@ module.exports = (sequelize, DataTypes) => {
       avgRating: {
         type: DataTypes.FLOAT,
         allowNull: false
+      },
+      wineId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
       }
     },
     {}
   );
-  Wine.associate = function(models) {
+  Rating.associate = function(models) {
     // associations can be defined here
 
-    Wine.hasMany(models.Rating, {
+    Rating.belongsTo(models.Wine, {
       foreignKey: "wineId",
-      as: "ratings"
+      onDelete: "CASCADE"
     });
   };
-  return Wine;
+  return Rating;
 };
