@@ -7,15 +7,23 @@
     <%include ../static/partials/navbar.ejs %>
     <main class="container">
       <h1>Wine Ratings List</h1>
+
+      <!-- Sort the wines list in descending order -->
+      <% let sortedWines = wines.sort((a, b) => (a.avgRating < b.avgRating) ? 1
+      : -1) %>
+
+      <!-- End of sorting algorithm -->
+
       <ul class="list-group">
-        <% wines.forEach((wine) => { %>
+        <% sortedWines.forEach((wine) => { %>
         <li class="list-group-item">
-          <a href="/wines/<%= wine.id %>"> <%= wine.name %> </a>
+          <a href="/wines/<%= wine.id %>">
+            <%= wine.name %> (<%= parseFloat(wine.avgRating).toFixed(1) %>)</a
+          >
         </li>
         <% }) %>
       </ul>
       <% include ../static/partials/footer.ejs %>
     </main>
-    <% include ../static/partials/baseScripts.ejs %>
   </body>
 </html>

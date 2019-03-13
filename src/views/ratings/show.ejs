@@ -7,13 +7,13 @@
     <% include ../static/partials/navbar.ejs %>
 
     <main class="container">
-      <h1>Your Rating</h1>
+      <h1>User's Rating</h1>
 
-      <table class="table table-bordered table-dark">
-        <thead>
+      <table class="table">
+        <thead class="thead-dark">
           <tr>
-            <th scope="col">Wine Characteristic</th>
-            <th scope="col">Rating</th>
+            <th scope="col" style="width: 50%">Wine Characteristic</th>
+            <th scope="col" style="width: 25%">Rating</th>
           </tr>
         </thead>
         <tbody>
@@ -40,7 +40,7 @@
         </tbody>
       </table>
 
-      <h1>Your Thoughts</h1>
+      <h1>User's Comments</h1>
       <div class="form-group">
         <textarea rows="3" class="form-control" name="comments" readonly>
 <%= rating.comments %></textarea
