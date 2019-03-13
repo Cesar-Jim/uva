@@ -27,6 +27,20 @@
       >
         <button type="submit" class="btn btn-danger">Delete</button>
       </form>
+      <section class="ratingsList">
+        <!-- Ratings will be rendered in the following section tag-->
+        <h1>Our Members Ratings</h1>
+        <ul>
+          <% let i = 1; %>
+          <% wine.ratings.forEach((rating) => { %>
+            <li class="list-group-item">
+              <a href="/wines/<%= wine.id %>/ratings/<%= rating.id %>">Rated <%= parseFloat(rating.avgRating).toFixed(1); %> by...</a>
+            </li>
+            <% i++; %>
+          <% })%>
+        </ul>
+        <a href="/wines/<%= wine.id %>/ratings/new" class="btn btn-success">Rate It!</a>
+      </section>
       <% include ../static/partials/footer.ejs %>
     </main>
     <% include ../static/partials/baseScripts.ejs %>

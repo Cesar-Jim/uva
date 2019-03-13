@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include ../static/partials/head.ejs %>
+  </head>
+  <body>
+    <% include ../static/partials/navbar.ejs %>
+
+    <main class="container">
+      <h1>Your Rating</h1>
+
+      <table class="table table-bordered table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Wine Characteristic</th>
+            <th scope="col">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Price / Quality</th>
+            <td><%= rating.poq %></td>
+          </tr>
+          <tr>
+            <th scope="row">Wine Body</th>
+            <td><%= rating.poq %></td>
+          </tr>
+          <tr>
+            <th scope="row">Wine Taste</th>
+            <td><%= rating.taste %></td>
+          </tr>
+          <tr>
+            <th scope="row">Bottle Looks</th>
+            <td><%= rating.looks %></td>
+          </tr>
+          <tr>
+            <th scope="row">Average Rating</th>
+            <td><%= parseFloat(rating.avgRating).toFixed(1) %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h1>Your Thoughts</h1>
+      <div class="form-group">
+        <textarea rows="3" class="form-control" name="comments" readonly>
+<%= rating.comments %></textarea
+        >
+      </div>
+
+      <h1>Any Changes?</h1>
+      <a
+        href="/wines/<%= rating.wineId %>/ratings/<%= rating.id %>/edit"
+        class="btn btn-warning"
+        >Edit</a
+      >
+      <form
+        style="display:initial"
+        action="/wines/<%= rating.wineId %>/ratings/<%= rating.id %>/destroy"
+        method="POST"
+      >
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+
+      <% include ../static/partials/footer.ejs %>
+    </main>
+    <% include ../static/partials/baseScripts.ejs %>
+  </body>
+</html>

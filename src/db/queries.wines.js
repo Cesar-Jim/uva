@@ -1,5 +1,7 @@
 const Wine = require("./models").Wine;
 
+const Rating = require("./models").Rating;
+
 module.exports = {
   getAllWines(callback) {
     return Wine.all()
@@ -12,7 +14,15 @@ module.exports = {
   },
 
   getWine(id, callback) {
-    return Wine.findById(id)
+    return Wine.findById(id, {
+      // include serves to eager load all associated ratings of a give wine object
+      include: [
+        {
+          model: Rating,
+          as: "ratings"
+        }
+      ]
+    })
       .then(wine => {
         callback(null, wine);
       })

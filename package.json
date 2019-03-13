@@ -1,7 +1,7 @@
 {
   "name": "uva",
   "version": "1.0.0",
-  "description": "A social application to discuss about wine\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C and rate wine",
+  "description": "A social application to discuss about and rate wine",
   "main": "src/server.js",
   "scripts": {
     "test": "set NODE_ENV=test&& jasmine",
