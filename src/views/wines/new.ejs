@@ -6,6 +6,8 @@
   <body>
     <%include ../static/partials/navbar.ejs %>
     <main class="container">
+      <% include ../static/partials/messages.ejs %>
+
       <h1>New Wine Critique</h1>
 
       <form action="/wines/create" method="POST">

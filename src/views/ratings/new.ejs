@@ -6,6 +6,8 @@
   <body>
     <% include ../static/partials/navbar.ejs %>
     <main class="container">
+      <% include ../static/partials/messages.ejs %>
+
       <h1>Your Rating</h1>
 
       <form action="/wines/<%= wineId %>/ratings/create" method="POST">

@@ -6,9 +6,11 @@ module.exports = {
     const staticRoutes = require("../routes/static");
     const wineRoutes = require("../routes/wines");
     const ratingRoutes = require("../routes/ratings");
+    const userRoutes = require("../routes/users");
 
     app.use(staticRoutes);
     app.use(wineRoutes);
     app.use(ratingRoutes);
+    app.use(userRoutes);
   }
 };
