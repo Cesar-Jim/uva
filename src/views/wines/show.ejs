@@ -6,41 +6,88 @@
   <body>
     <%include ../static/partials/navbar.ejs %>
     <main class="container">
-      <h1><%= wine.name %></h1>
-      <img src="../../images/wines/<%= wine.picture %>" alt="wine image" height="190" width="100"></img>
-      <p>Country: <%= wine.country %></p>
-      <p>Price: <%= wine.price %></p>
-      <p>Grape variety: <%= wine.variety %></p>
-      <p>Alcohol percentage: <%= wine.alcohol %></p>
-      <h1>UVA's rating</h1>
-      <p>Price / Quality: <%= wine.poq %></p>
-      <p>Wine body: <%= wine.body %></p>
-      <p>Wine taste: <%= wine.taste %></p>
-      <p>Bottle looks: <%= wine.looks %></p>
-      <p>Comments: <%= wine.comments %></p>
-      <p>Average Rating: <%= parseFloat((wine.poq + wine.body + wine.taste + wine.looks) / 4).toFixed(1) %></p>
-      <a href="/wines/<%= wine.id %>/edit" class="btn btn-warning">Edit</a>
-      <form
-        style="display:initial"
-        action="/wines/<%= wine.id %>/destroy"
-        method="POST"
-      >
-        <button type="submit" class="btn btn-danger">Delete</button>
-      </form>
+      <section class="headShowWine">
+        <h1 class="form-group wineNameTitle" id="wine-name-title"><%= wine.name %></h1>
+        <div id="bottleAndRating">
+          <img class="animated fadeInDown bottleImg" src="../../images/wines/<%= wine.picture %>" alt="wine image" height="300" width="150"></img>
+          <p class="animated flip bottleRating"><%= parseFloat((wine.poq + wine.body + wine.taste + wine.looks) / 4).toFixed(1) %></p>
+        </div>
+        <form
+          style="display:initial"
+          action="/wines/<%= wine.id %>/destroy"
+          method="POST"
+          id="buttonsShowWine"
+        >
+        <a href="/wines/<%= wine.id %>/edit" class="btn btn-warning editShowWine">Edit</a>
+
+          <button type="submit" class="btn btn-danger delShowWine">Delete</button>
+        </form>
+      </section>
+
+      <section class="wineInfo">
+          <table class="table">
+              <tbody>
+                <tr>
+                  <th class="originTh" scope="row">Origin:</th>
+                  <td><%= wine.country %></td>
+                </tr>
+                <tr>
+                    <th class="varietyTh" scope="row">Variety:</th>
+                    <td><%= wine.variety %></td>
+                </tr>
+                <tr>
+                    <th class="alcoholTh" scope="row">Alcohol %:</th>
+                    <td><%= parseFloat(wine.alcohol).toFixed(1) %></td>
+                </tr>
+                <tr>
+                  <th class="priceTh" scope="row">Avg. price (USD):</th>
+                  <td>$<%= parseFloat(wine.price).toFixed(2) %></td>
+                </tr> 
+                <tr>
+                    <th class="commentsTh" scope="row">UVA's Review:</th>
+                    <td><%= wine.comments %></td>
+                </tr> 
+              </tbody>
+            </table>
+      </section>
+
+
       <section class="ratingsList">
         <!-- Ratings will be rendered in the following section tag-->
-        <h1>Our Members Ratings</h1>
-        <ul>
-          <% let i = 1; %>
-          <% wine.ratings.forEach((rating) => { %>
-            <li class="list-group-item">
-              <a href="/wines/<%= wine.id %>/ratings/<%= rating.id %>">Rated <%= parseFloat(rating.avgRating).toFixed(1); %> by...</a>
-            </li>
-            <% i++; %>
-          <% })%>
-        </ul>
-        <a href="/wines/<%= wine.id %>/ratings/new" class="btn btn-success">Rate It!</a>
+        <div class="headMembers">
+          <h1 class="form-group membersTitle" id="members-title">Members' Voice</h1>
+          <a href="/wines/<%= wine.id %>/ratings/new" class="btn btn-success rateItBtn">Rate This Wine</a>
+        </div>
+
+        <table class="table wineRatingsTable">
+            <thead class="thead-dark">
+              <tr>
+                <th class="tableHeader ratingNumber" scope="col">#</th>
+                <th class="tableHeader ratedBy" scope="col">Rated by</th>
+                <th class="tableHeader rating" scope="col">Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              <%let j = 1; %> 
+              <% wine.ratings.forEach((rating) => { %>
+              <tr class="tableRow">
+                <th scope="row" id="ranking"><%= j %></th>
+                <td id="name">
+                  [member name]
+                </td>
+                <td id="avgRating"><a href="/wines/<%= wine.id %>/ratings/<%= rating.id %>"><span class="badge badge-dark"
+                  ><%= parseFloat(rating.avgRating).toFixed(1) %>
+                  </span
+                ></a>
+                </td>
+              </tr>
+              <% j++; %> <% }) %>
+            </tbody>
+          </table>
+
+         
       </section>
+
       <% include ../static/partials/footer.ejs %>
     </main>
     <% include ../static/partials/baseScripts.ejs %>

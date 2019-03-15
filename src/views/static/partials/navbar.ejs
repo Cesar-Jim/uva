@@ -1,5 +1,8 @@
 <!-- Navigation -->
-<nav class="animated slideInDown navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="navbar">
+<nav
+  class="animated slideInDown navbar navbar-expand-lg navbar-dark bg-dark fixed-top"
+  id="navbar"
+>
   <button
     class="navbar-toggler"
     type="button"
@@ -11,6 +14,7 @@
   >
     <span class="navbar-toggler-icon"></span>
   </button>
+
   <a href="/" class="navbar-right"
     ><img
       class="animated fadeIn logo"
@@ -19,32 +23,32 @@
       height="150"
       alt="UVA"
   /></a>
+
   <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto" id="navbar-links">
-        <li class="nav-item">
-          <a class="nav-link" id="home-active" href="/"
-            >Home
-          </a>
-        </li>
-        <% if(currentUser) { %>
-          <li class="nav-item">
-            <a class="nav-link" href="/users/sign_out">Sign out</a>
-          </li>
-        <% } else { %>
-          <li class="nav-item">
-            <a class="nav-link" href="/users/sign_up">Sign up</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/users/sign_in">Sign in</a>
-          </li>
-        <% }%>
-        <li class="nav-item">
-            <a class="nav-link" href="/wines">Wines</a>
-          </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">About</a>
-        </li>
-      </ul>
-    </div>
+    <ul class="navbar-nav ml-auto" id="navbar-links">
+      <li class="nav-item">
+        <a class="nav-link homeLink" id="home-active" href="/"
+          >Home <span class="sr-only">(current)</span></a
+        >
+      </li>
+      <% if(currentUser) { %>
+      <li class="nav-item">
+        <a class="nav-link signOutLink" href="/users/sign_out">Sign out</a>
+      </li>
+      <% } else { %>
+      <li class="nav-item">
+        <a class="nav-link signUpLink" href="/users/sign_up">Sign up</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link signInLink" href="/users/sign_in">Sign in</a>
+      </li>
+      <% }%>
+      <li class="nav-item">
+        <a class="nav-link winesLink" href="/wines">Wines</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link aboutLink" href="#">About</a>
+      </li>
+    </ul>
   </div>
 </nav>

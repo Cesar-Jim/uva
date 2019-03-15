@@ -6,23 +6,44 @@
   <body>
     <%include ../static/partials/navbar.ejs %>
     <main class="container">
-      <h1>Wine Ratings List</h1>
+      <h1 class="form-group wineRatingsTitle" id="wine-ratings-title">
+        Wine Ratings List
+      </h1>
+      <a href="/wines/new" class="btn btn-outline-dark btn-lg" id="signUp-btn"
+        >Add a wine</a
+      >
 
       <!-- Sort the wines list in descending order -->
       <% let sortedWines = wines.sort((a, b) => (a.avgRating < b.avgRating) ? 1
       : -1) %>
-
       <!-- End of sorting algorithm -->
 
-      <ul class="list-group">
-        <% sortedWines.forEach((wine) => { %>
-        <li class="list-group-item">
-          <a href="/wines/<%= wine.id %>">
-            <%= wine.name %> (<%= parseFloat(wine.avgRating).toFixed(1) %>)</a
-          >
-        </li>
-        <% }) %>
-      </ul>
+      <table class="table wineRatingsTable">
+        <thead class="thead-dark">
+          <tr>
+            <th class="tableHeader wineRanking" scope="col">Ranking</th>
+            <th class="tableHeader wineName" scope="col">Wine Name</th>
+            <th class="tableHeader wineCountry" scope="col">Country</th>
+            <th class="tableHeader wineRating" scope="col">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <%let i = 1; %> <% sortedWines.forEach((wine) => { %>
+          <tr class="tableRow">
+            <th scope="row" id="ranking"><%= i %></th>
+            <td id="name">
+              <a href="/wines/<%= wine.id %>"><%= wine.name %></a>
+            </td>
+            <td id="country"><%= wine.country %></td>
+            <td id="avgRating">
+              <span class="badge badge-dark"
+                ><%= parseFloat(wine.avgRating).toFixed(1) %></span
+              >
+            </td>
+          </tr>
+          <% i++; %> <% }) %>
+        </tbody>
+      </table>
       <% include ../static/partials/footer.ejs %>
     </main>
   </body>

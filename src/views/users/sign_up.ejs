@@ -7,49 +7,42 @@
     <% include ../static/partials/navbar.ejs %>
 
     <main class="container">
-      <h1>Sign up</h1>
+      <h1 class="form-group signUpTitle" id="sign-up-title">Join Us!</h1>
 
-      <form action="/users" method="post">
-        <div class="form-group">
+      <form action="/users" method="post" class="formSignUp">
+        <div class="form-group row col-6">
           <label for="email">Email</label>
           <input
             type="email"
-            class="form-control"
+            class="form-control email"
             name="email"
             aria-describedby="emailHelp"
-            placeholder="Enter email"
           />
-          <small class="text-muted" id="emailHelp"
-            >email address must be a valid address</small
-          >
         </div>
 
-        <div class="form-group">
+        <div class="form-group row col-6">
           <label for="password">Password</label>
           <input
             type="password"
             class="form-control"
             name="password"
             aria-describedby="passwordHelp"
-            placeholder="Enter password"
           />
-          <small class="text-muted" id="passwordHelp"
-            >password must match confirmation below</small
-          >
         </div>
 
-        <div class="form-group">
+        <div class="form-group row col-6">
           <label for="passwordConfirmation">Password confirmation</label>
           <input
             type="password"
             class="form-control"
             name="passwordConfirmation"
             aria-describedby="passwordHelp"
-            placeholder="Enter password confirmation"
           />
         </div>
 
-        <button type="submit" class="btn btn-primary">Sign up</button>
+        <button type="submit" class="btn btn-primary signUpBtn">
+          Sign up
+        </button>
       </form>
 
       <% include ../static/partials/footer.ejs %>

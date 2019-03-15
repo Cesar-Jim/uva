@@ -7,116 +7,101 @@
     <% include ../static/partials/navbar.ejs %>
 
     <main class="container">
-      <h1>Edit Rating</h1>
+      <h1 class="form-group editRatingTitle" id="edit-rating-title">
+        Edit Rating
+      </h1>
 
       <form
         action="/wines/<%= rating.wineId %>/ratings/<%= rating.id %>/update"
         method="POST"
+        id="formEditRating"
       >
         <div class="form-group row">
-          <div class="col-2">
-            <label for="poq">Price / Quality</label>
-            <input
-              type="number"
-              class="form-control"
-              name="poq"
-              aria-describedby="poqHelp"
-              step="1"
-              min="0"
-              max="10"
-              id="poqValue"
-              value="<%= rating.poq %>"
-              onchange="avgRatingUpdate()"
-            />
-            <small class="text-muted" id="pqHelp"
-              >value out of 10. Ex.: 8</small
-            >
-          </div>
+          <label for="poq">Price / Quality</label>
+          <input
+            type="number"
+            class="form-control"
+            name="poq"
+            aria-describedby="poqHelp"
+            step="1"
+            min="0"
+            max="10"
+            id="poqValue"
+            value="<%= rating.poq %>"
+            onchange="avgRatingUpdate()"
+          />
+          <small class="text-muted" id="pqHelp">value out of 10. Ex.: 8</small>
         </div>
 
         <div class="form-group row">
-          <div class="col-2">
-            <label for="body">Wine body</label>
-            <input
-              type="number"
-              class="form-control"
-              name="body"
-              aria-describedby="bodyHelp"
-              step="1"
-              min="0"
-              max="10"
-              id="bodyValue"
-              value="<%= rating.body %>"
-              onchange="avgRatingUpdate()"
-            />
-            <small class="text-muted" id="bodHelp"
-              >value out of 10. Ex.: 8</small
-            >
-          </div>
+          <label for="body">Wine body</label>
+          <input
+            type="number"
+            class="form-control"
+            name="body"
+            aria-describedby="bodyHelp"
+            step="1"
+            min="0"
+            max="10"
+            id="bodyValue"
+            value="<%= rating.body %>"
+            onchange="avgRatingUpdate()"
+          />
+          <small class="text-muted" id="bodHelp">value out of 10. Ex.: 8</small>
         </div>
 
         <div class="form-group row">
-          <div class="col-2">
-            <label for="taste">Wine taste</label>
-            <input
-              type="number"
-              class="form-control"
-              name="taste"
-              aria-describedby="tasteHelp"
-              step="1"
-              min="0"
-              max="10"
-              id="tasteValue"
-              value="<%= rating.taste %>"
-              onchange="avgRatingUpdate()"
-            />
-            <small class="text-muted" id="tasHelp"
-              >value out of 10. Ex.: 8</small
-            >
-          </div>
+          <label for="taste">Wine taste</label>
+          <input
+            type="number"
+            class="form-control"
+            name="taste"
+            aria-describedby="tasteHelp"
+            step="1"
+            min="0"
+            max="10"
+            id="tasteValue"
+            value="<%= rating.taste %>"
+            onchange="avgRatingUpdate()"
+          />
+          <small class="text-muted" id="tasHelp">value out of 10. Ex.: 8</small>
         </div>
 
         <div class="form-group row">
-          <div class="col-2">
-            <label for="looks">Bottle looks</label>
-            <input
-              type="number"
-              class="form-control"
-              name="looks"
-              aria-describedby="looksHelp"
-              step="1"
-              min="0"
-              max="10"
-              id="looksValue"
-              value="<%= rating.looks %>"
-              onchange="avgRatingUpdate()"
-            />
-            <small class="text-muted" id="looHelp"
-              >value out of 10. Ex.: 8</small
-            >
-          </div>
+          <label for="looks">Bottle looks</label>
+          <input
+            type="number"
+            class="form-control"
+            name="looks"
+            aria-describedby="looksHelp"
+            step="1"
+            min="0"
+            max="10"
+            id="looksValue"
+            value="<%= rating.looks %>"
+            onchange="avgRatingUpdate()"
+          />
+          <small class="text-muted" id="looHelp">value out of 10. Ex.: 8</small>
         </div>
 
         <div class="form-group row">
-          <div class="col-3">
-            <label for="avgRating">Rating</label>
-            <input
-              type="number"
-              class="form-control"
-              name="avgRating"
-              aria-describedby="avgRatingHelp"
-              step="0.1"
-              min="0"
-              max="10"
-              id="avgRatingValue"
-              value="<%= rating.avgRating %>"
-              readonly
-            />
-            <small class="text-muted" id="avgRatHelp">your verdict</small>
-          </div>
+          <label for="avgRating">Rating</label>
+          <input
+            type="number"
+            class="form-control"
+            name="avgRating"
+            aria-describedby="avgRatingHelp"
+            step="0.1"
+            min="0"
+            max="10"
+            id="avgRatingValue"
+            value="<%= rating.avgRating %>"
+            readonly
+          />
+          <small class="text-muted" id="avgRatHelp">your verdict</small>
         </div>
 
-        <div class="form-group">
+        <div class="form-group row">
           <label for="comments">Comments</label>
           <textarea rows="3" class="form-control" name="comments">
 <%= rating.comments %></textarea
@@ -126,7 +111,9 @@
           >
         </div>
 
-        <button type="submit" class="btn btn-primary">Update</button>
+        <button type="submit" class="btn btn-primary editRatingBtn">
+          Update
+        </button>
       </form>
 
       <% include ../static/partials/footer.ejs %>

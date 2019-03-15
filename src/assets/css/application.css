@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Cinzel|Parisienne|Open+Sans");
+@import url("https://fonts.googleapis.com/css?family=Cinzel|Parisienne|Open+Sans:300,400");
 
 .animated.hinge {
   -webkit-animation: hinge 3s; /* Safari 4+ */
@@ -59,6 +59,7 @@ h3 {
   background-color: #212426 !important;
   justify-content: center;
   height: 110px;
+  border-bottom: 2px solid rgb(207, 176, 125);
 }
 
 .logo {
@@ -71,6 +72,19 @@ h3 {
   position: absolute;
   justify-items: left;
   margin: -20px 0px 0px 0px;
+}
+
+@media (max-width: 990px) {
+  .homeLink,
+  .signUpLink,
+  .signInLink,
+  .signOutLink,
+  .winesLink,
+  .aboutLink {
+    background-color: #212426;
+    text-align: center;
+    border-bottom: 1px solid #909293;
+  }
 }
 
 /***************************/
@@ -107,10 +121,14 @@ main.header-container {
 }
 
 #signUp-btn:hover {
-  border-color: #ffffff;
-  background-color: rgb(255, 255, 255, 0.4);
-  color: rgb(255, 255, 255, 1);
+  border-color: rgb(33, 36, 38, 1);
+  background-color: rgb(33, 36, 38, 1);
+  color: rgb(255, 255, 255);
   border-width: 1px;
+  -webkit-transition: background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
 }
 
 .display-1,
@@ -267,4 +285,546 @@ img.card-img-top {
 #rate-title,
 #learn-title {
   margin-top: 20px;
+}
+
+/****************/
+/* SIGN-UP VIEW */
+/****************/
+
+.signUpTitle {
+  font-family: "Parisienne", cursive;
+  font-size: 50px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#sign-up-title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+.formSignUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signUpBtn {
+  display: block;
+  max-width: 140px;
+  margin: 25px auto 75px auto;
+  background-color: #21242600;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+}
+
+.signUpBtn:hover {
+  border-color: rgb(33, 36, 38, 1);
+  background: #212426;
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+
+/****************/
+/* SIGN-IN VIEW */
+/****************/
+
+.signInTitle {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(10px 10px 10px rgba(34, 34, 34, 0.2));
+  font-family: "Parisienne", cursive;
+  font-size: 50px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#sign-in-title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+.formSignIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signInBtn {
+  display: block;
+  max-width: 140px;
+  margin: 25px auto 75px auto;
+  background-color: #21242600;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+}
+
+.signInBtn:hover {
+  border-color: rgb(33, 36, 38, 1);
+  background: #212426;
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+
+.form-control {
+  -webkit-filter: drop-shadow(5px 5px 5px #222);
+  filter: drop-shadow(10px 10px 10px rgba(34, 34, 34, 0.2));
+}
+
+/*************************************/
+/* WINE RATINGS LIST VIEW (index.ejs)*/
+/*************************************/
+
+.wineRatingsTitle {
+  font-family: "Parisienne", cursive;
+  font-size: 50px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#wine-ratings-title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+.wineRatingsTable {
+  text-align: center;
+}
+
+.wineRanking,
+.wineName,
+.wineCountry,
+.wineRating {
+  background-color: rgb(33, 36, 38, 1) !important;
+}
+
+#avgRating {
+  font-family: "Open Sans", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.tableHeader {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  font-weight: 400 !important;
+  color: #ffffff;
+  background-color: rgb(33, 36, 38, 1);
+}
+
+.tableRow:hover {
+  background-color: rgb(211, 211, 211);
+}
+
+/******************************/
+/* NEW WINE CRITIQUE (new.ejs)*/
+/******************************/
+
+#formNewCritique {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 50px 0px 50px !important;
+}
+
+.newWineTitle,
+.uvaTitle {
+  font-family: "Parisienne", cursive;
+  font-size: 50px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#new-wine-title,
+#uva-Title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+.newCritiqueBtn {
+  display: block;
+  max-width: 140px;
+  margin: 25px auto 75px auto;
+  background-color: #21242600;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+}
+
+.newCritiqueBtn:hover {
+  border-color: rgb(33, 36, 38, 1);
+  background: #212426;
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+
+/***********************/
+/* SHOW WINE (show.ejs)*/
+/***********************/
+
+.wineNameTitle {
+  font-family: "Parisienne", cursive;
+  font-size: 60px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#wine-name-title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+.headShowWine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#buttonsShowWine {
+  margin: auto;
+  padding: 0px 0px 50px 0px;
+}
+
+.editShowWine,
+.delShowWine {
+  width: 100px;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+  margin: 0px 15px 0px 15px;
+}
+
+.editShowWine:hover,
+.delShowWine:hover {
+  border-color: rgb(33, 36, 38, 1);
+  background-color: rgb(33, 36, 38, 1);
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+}
+
+#bottleAndRating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  margin: auto;
+}
+
+.bottleRating {
+  display: table-cell;
+  position: absolute;
+  font-family: "Open Sans", sans-serif;
+  font-size: 46px;
+  font-weight: 400;
+  padding: 25px;
+  margin-left: 90px;
+  border-radius: 50%;
+  background-color: rgb(33, 36, 38, 0.75);
+  color: rgb(255, 255, 255);
+  border: 3px solid rgb(255, 255, 255);
+}
+
+.bottleImg {
+  padding: 0px 0px 50px 0px;
+  -webkit-filter: drop-shadow(5px 5px 5px rgba(34, 34, 34, 0.8)) !important;
+  filter: drop-shadow(4px 4px 4px rgb(34, 34, 34));
+}
+
+.wineInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.originTh,
+.varietyTh,
+.alcoholTh,
+.priceTh,
+.commentsTh {
+  text-align: right;
+}
+
+.membersTitle {
+  font-family: "Parisienne", cursive;
+  font-size: 60px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#members-title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+.headMembers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.rateItBtn {
+  width: 125px;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+  margin: 0px auto 50px auto !important;
+}
+
+.rateItBtn:hover {
+  border-color: rgb(33, 36, 38, 1);
+  background-color: rgb(33, 36, 38, 1);
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  -webkit-transition: background-color 1.5s ease-out;
+  -moz-transition: background-color 1.5s ease-out;
+  -o-transition: background-color 1.5s ease-out;
+  transition: background-color 1.5s ease-out;
+}
+
+/*************/
+/* EDIT WINE */
+/*************/
+
+.editWineTitle,
+.editRatingTitle {
+  font-family: "Parisienne", cursive;
+  font-size: 60px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#edit-wine-title,
+#edit-rating-title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+#formEditWine {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 50px 0px 50px !important;
+}
+
+.updateWineBtn {
+  display: block;
+  max-width: 140px;
+  margin: 25px auto 75px auto;
+  background-color: #21242600;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+}
+
+.updateWineBtn:hover {
+  border-color: rgb(33, 36, 38, 1);
+  background: #212426;
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  -webkit-transition: background-color 0.5s ease-out;
+  -moz-transition: background-color 0.5s ease-out;
+  -o-transition: background-color 0.5s ease-out;
+  transition: background-color 0.5s ease-out;
+}
+
+/***************/
+/* NEW RATINGS */
+/***************/
+
+.newRatingTitle {
+  font-family: "Parisienne", cursive;
+  font-size: 60px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#new-rating-title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+#formNewRating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 50px 0px 50px !important;
+}
+
+.ratingBtn {
+  width: 125px;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+  margin: 50px auto 50px auto !important;
+}
+
+.ratingBtn:hover {
+  border-color: rgb(33, 36, 38, 1);
+  background-color: rgb(33, 36, 38, 1);
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  -webkit-transition: background-color 1.5s ease-out;
+  -moz-transition: background-color 1.5s ease-out;
+  -o-transition: background-color 1.5s ease-out;
+  transition: background-color 1.5s ease-out;
+}
+
+/***************/
+/* SHOW RATING */
+/***************/
+
+.showRatingTitle {
+  font-family: "Parisienne", cursive;
+  font-size: 60px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#show-rating-title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+.headShowRating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#buttonsShowRating {
+  margin: auto;
+  padding: 0px 0px 50px 0px;
+}
+
+.editShowRating,
+.delShowRating {
+  width: 100px;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+  margin: 0px 15px 0px 15px;
+}
+
+.editShowRating:hover,
+.delShowRating:hover {
+  border-color: rgb(33, 36, 38, 1);
+  background-color: rgb(33, 36, 38, 1);
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  -webkit-transition: background-color 1s ease-out;
+  -moz-transition: background-color 1s ease-out;
+  -o-transition: background-color 1s ease-out;
+  transition: background-color 1s ease-out;
+}
+
+.showRatingTable {
+  text-align: center;
+}
+
+.tableRow:hover {
+  background-color: rgb(211, 211, 211);
+}
+
+#poqRating,
+#bodyRating,
+#tasteRating,
+#looksRating,
+#avgRatedRating {
+  font-family: "Open Sans", sans-serif;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+/***************/
+/* EDIT RATING */
+/***************/
+
+.editRatingTitle {
+  font-family: "Parisienne", cursive;
+  font-size: 60px;
+  font-weight: 100;
+  color: #212426;
+  padding: 100px 0px 25px 0px;
+  text-align: center;
+}
+
+#edit-rating-title {
+  -webkit-filter: drop-shadow(5px 5px 5px #222) !important;
+  filter: drop-shadow(3px 3px 3px rgb(34, 34, 34, 0.5)) !important;
+}
+
+#formEditRating {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 50px 0px 50px !important;
+}
+
+.editRatingBtn {
+  width: 125px;
+  background-color: #ffffff;
+  border-width: 1px;
+  border-color: rgb(33, 36, 38, 1);
+  color: rgb(33, 36, 38, 1);
+  margin: 50px auto 50px auto !important;
+}
+
+.editRatingBtn:hover {
+  border-color: rgb(33, 36, 38, 1);
+  background-color: rgb(33, 36, 38, 1);
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  -webkit-transition: background-color 1.5s ease-out;
+  -moz-transition: background-color 1.5s ease-out;
+  -o-transition: background-color 1.5s ease-out;
+  transition: background-color 1.5s ease-out;
+}
+
+/******************/
+/* FOOTER PARTIAL */
+/******************/
+
+.footer {
+  padding: 100px 0px 50px 0px;
 }
