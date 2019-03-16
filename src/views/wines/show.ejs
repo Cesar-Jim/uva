@@ -9,7 +9,7 @@
       <section class="headShowWine">
         <h1 class="form-group wineNameTitle" id="wine-name-title"><%= wine.name %></h1>
         <div id="bottleAndRating">
-          <img class="animated fadeInDown bottleImg" src="../../images/wines/<%= wine.picture %>" alt="wine image" height="300" width="150"></img>
+          <img class="animated fadeInDown bottleImg" src="../../images/wines/<%= wine.picture %>" alt="wine image" height="350" width="150"></img>
           <p class="animated flip bottleRating"><%= parseFloat((wine.poq + wine.body + wine.taste + wine.looks) / 4).toFixed(1) %></p>
         </div>
         <form
