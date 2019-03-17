@@ -2,6 +2,16 @@ const Rating = require("./models").Rating;
 const Wine = require("./models").Wine;
 
 module.exports = {
+  getAllRatings(callback) {
+    return Rating.findAll()
+      .then(ratings => {
+        callback(null, ratings);
+      })
+      .catch(err => {
+        callback(err);
+      });
+  },
+
   addRating(newRating, callback) {
     return Rating.create(newRating)
       .then(rating => {

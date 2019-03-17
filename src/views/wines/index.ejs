@@ -37,7 +37,9 @@
             <td id="country"><%= wine.country %></td>
             <td id="avgRating">
               <span class="badge badge-dark"
-                ><%= parseFloat(wine.avgRating).toFixed(1) %></span
+                ><%= wine.avgRating >= 10.0 ? wine.avgRating =
+                parseInt(wine.avgRating) : wine.avgRating =
+                parseFloat(wine.avgRating).toFixed(1) %></span
               >
             </td>
           </tr>

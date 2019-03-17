@@ -10,7 +10,9 @@
         <h1 class="form-group wineNameTitle" id="wine-name-title"><%= wine.name %></h1>
         <div id="bottleAndRating">
           <img class="animated fadeInDown bottleImg" src="../../images/wines/<%= wine.picture %>" alt="wine image" height="350" width="150"></img>
-          <p class="animated flip bottleRating"><%= parseFloat((wine.poq + wine.body + wine.taste + wine.looks) / 4).toFixed(1) %></p>
+          <%let result = ((wine.poq + wine.body + wine.taste + wine.looks) / 4); %>
+          <% result >= 10 ? result = parseInt(result) : result = parseFloat(result).toFixed(1); %>
+          <p class="animated flip bottleRating"><%= result %></p>
         </div>
         <form
           style="display:initial"
@@ -76,7 +78,10 @@
                   [member name]
                 </td>
                 <td id="avgRating"><a href="/wines/<%= wine.id %>/ratings/<%= rating.id %>"><span class="badge badge-dark"
-                  ><%= parseFloat(rating.avgRating).toFixed(1) %>
+                  ><%= rating.avgRating >= 10.0
+                    ? rating.avgRating = parseInt(rating.avgRating)
+                    : rating.avgRating = parseFloat(rating.avgRating).toFixed(1) 
+                    %>
                   </span
                 ></a>
                 </td>

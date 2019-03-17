@@ -65,7 +65,9 @@
             <th scope="row">Average Rating</th>
             <td id="avgRatedRating">
               <span class="badge badge-dark"
-                ><%= parseFloat(rating.avgRating).toFixed(1) %></span
+                ><%= rating.avgRating >= 10.0 ? rating.avgRating =
+                parseInt(rating.avgRating) : rating.avgRating =
+                parseFloat(rating.avgRating).toFixed(1) %></span
               >
             </td>
           </tr>

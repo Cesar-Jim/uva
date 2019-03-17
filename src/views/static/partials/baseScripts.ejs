@@ -23,10 +23,10 @@
 <!-- calculation scripts -->
 <script>
   function avgRatingUpdate() {
-    var poq = parseFloat(document.getElementById("poqValue").value);
-    var body = parseFloat(document.getElementById("bodyValue").value);
-    var taste = parseFloat(document.getElementById("tasteValue").value);
-    var looks = parseFloat(document.getElementById("looksValue").value);
+    var poq = parseFloat(document.getElementById("poqValue").value) || 0;
+    var body = parseFloat(document.getElementById("bodyValue").value) || 0;
+    var taste = parseFloat(document.getElementById("tasteValue").value) || 0;
+    var looks = parseFloat(document.getElementById("looksValue").value) || 0;
 
     // Clear avgRating input field
     document.getElementById("avgRatingValue").value = "";
